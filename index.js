@@ -2,7 +2,6 @@ const express =require('express');
 const mongoose=require('mongoose');
 const cors = require("cors");
 
-require('dotenv').config();
 
 
 const app=express();
@@ -22,8 +21,10 @@ app.use('/bill',billRoute);
 app.get('/', (req, res) => {
     res.send('Connected to Techno database 🚀');
 });
+
 const MONGO_URI="mongodb+srv://technosportong_db_user:technosportongole@cluster0.i4ncumc.mongodb.net/techno"
-mongoose.connect(process.env.MONGO_URI)
+
+mongoose.connect(MONGO_URI)
 .then(()=>{
     console.log('connected to database');
 })
