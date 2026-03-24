@@ -20,7 +20,7 @@ app.get('/', (req, res) => {
     res.send('Connected to Techno database 🚀');
 });
 
-mongoose.connect('mongodb+srv://subramanyamchoda50:jZNpIn2bW5K45yWm@cluster0.hxbjd.mongodb.net/techno')
+mongoose.connect('mongodb+srv://technosportong_db_user:SRNtZibf0TlKk4SV@cluster0.i4ncumc.mongodb.net/techno')
 .then(()=>{
     console.log('connected to database');})
 .catch((err)=>{
