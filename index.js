@@ -2,6 +2,9 @@ const express =require('express');
 const mongoose=require('mongoose');
 const cors = require("cors");
 
+require('dotenv').config();
+
+
 const app=express();
 const userRoute=require('./Routes/UserRoute');
 const itemsRoute=require('./Routes/ItemsRoute');
@@ -20,14 +23,13 @@ app.get('/', (req, res) => {
     res.send('Connected to Techno database 🚀');
 });
 
-mongoose.connect('mongodb+srv://technosportong_db_user:SRNtZibf0TlKk4SV@cluster0.i4ncumc.mongodb.net/techno')
+mongoose.connect(process.env.MONGO_URI)
 .then(()=>{
-    console.log('connected to database');})
+    console.log('connected to database');
+})
 .catch((err)=>{
     console.log(err);
 });
-
-
 
 
 app.listen(3000,()=>{
